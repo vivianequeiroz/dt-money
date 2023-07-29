@@ -10,7 +10,7 @@ import {
 import { TransactionsContext } from '../../contexts/TransactionsContext';
 
 export function Transactions() {
-  const { transactions} = useContext(TransactionsContext)
+  const { transactions} = useContext(TransactionsContext);
 
   return (
     <div>
