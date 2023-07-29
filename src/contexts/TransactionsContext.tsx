@@ -17,12 +17,12 @@ interface TransactionsProviderProps {
   children: ReactNode;
 }
 
-const TransactionContext = createContext({} as TransactionContext)
+export const TransactionsContext = createContext({} as TransactionContext)
 
 const baseURL = 'http://localhost:3333/transactions';
 
 export function TransactionsProvider({children}: TransactionsProviderProps) {
-  const [transaction, setTransaction] = useState<Transaction[]>([]);
+  const [transactions, setTransaction] = useState<Transaction[]>([]);
 
   async function loadTransactions() {
     const response = await fetch(baseURL);
@@ -36,8 +36,8 @@ export function TransactionsProvider({children}: TransactionsProviderProps) {
   }, [])
 
   return (
-    <TransactionContext.Provider value={{transactions: []}}>
+    <TransactionsContext.Provider value={{transactions}}>
       {children}
-    </TransactionContext.Provider >
+    </TransactionsContext.Provider >
   )
 }
