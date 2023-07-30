@@ -50,4 +50,6 @@ function SearchFormComponent() {
   )
 }
 
+// Important:
+// memo is being used here only to explore usage. This is a pretty simple component that really do not require this performance optmization technique
 export const SearchForm = memo(SearchFormComponent)
